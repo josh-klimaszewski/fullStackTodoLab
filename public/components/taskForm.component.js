@@ -3,13 +3,22 @@
         templateUrl: "partials/taskForm.html",
         controller: function (FormService) {
             var vm = this;
-            vm.sendInfo = function(task) {
-                if (task) {
-                FormService.postInfo(task);
-                
-                document.getElementById('addInput').value = "";
-                }
+            loadItems();
+            function loadItems() {
+                FormService.getInfo().then(function(tasks) {
+                    vm.tasks = tasks; 
+                })
             }
+            vm.sendInfo = function(task) {
+                var newTask = {task: task};
+                FormService.postInfo(newTask).then(loadItems());
+                console.log(newTask);
+                
+            }
+            vm.rmInfo = function(task) {
+                FormService.removeInfo(task.id).then(loadItems());
+            }
+
         }
     };
     angular

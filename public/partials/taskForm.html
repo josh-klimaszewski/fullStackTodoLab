@@ -1,10 +1,17 @@
 <main>
-<div class="container endContainer">
-    <a href="#!/start" class="backArrow"><i class="material-icons arrow">arrow_back</i>Go Back</a>
-    <p class="heading">TODO List</p>
-    <p>A place to store the things you need to do!</p>
-    <task-list tasks="$ctrl.tasks"></task-list>
-    <input id="addInput" type="text" ng-model="task" placeholder="  Add to your to-do">
-    <button class="saveButton" ng-click="$ctrl.sendInfo(task)">Add</button>
-</div>
+    <div class="container endContainer">
+        <a href="#!/start" class="backArrow">
+            <i class="material-icons arrow">arrow_back</i>Go Back</a>
+        <p class="heading">TODO List</p>
+        <p>A place to store the things you need to do!</p>
+        <input id="filterInput" type="text" ng-model="todoFilter" placeholder="  Filter your to-dos">
+        <ol>
+            <li ng-repeat="task in $ctrl.tasks | filter: todoFilter track by $index" hover-state>
+                {{ task.task }}
+                <button class="xout" ng-click="$ctrl.rmInfo(task)">x</button>
+            </li>
+        </ol>
+        <input id="addInput" type="text" ng-model="task" placeholder="  Add to your to-do">
+        <button class="saveButton" ng-click="$ctrl.sendInfo(task)">Add</button>
+    </div>
 </main>

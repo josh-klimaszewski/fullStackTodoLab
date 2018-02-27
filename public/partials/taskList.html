@@ -1,7 +1,0 @@
-<input id="filterInput" type="text" ng-model="todoFilter" placeholder="  Filter your to-dos">
-<ol>
-    <li ng-repeat="task in $ctrl.tasks | filter: todoFilter track by $index" hover-state>
-        {{ task }}
-        <button class="xout" ng-click="$ctrl.rmInfo(task)">x</button>
-    </li>
-</ol>

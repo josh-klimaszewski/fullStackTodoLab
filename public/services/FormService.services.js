@@ -11,7 +11,7 @@
             // API post method
             return $http({
                 method: "POST",
-                url: "/items",
+                url: "/tasks",
                 data: item
             })
             
@@ -20,7 +20,7 @@
             // API get method
             return $http({
                 method: "GET",
-                url: "/items"
+                url: "/tasks"
             }).then(function(response) {
                 return response.data;
             })
@@ -29,7 +29,7 @@
             // api remove method
             return $http({
                 method: "DELETE",
-                url: "/items/" + itemId
+                url: "/tasks/" + itemId
             })
         }
     }
