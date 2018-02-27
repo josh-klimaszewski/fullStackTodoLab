@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box; 
+ }
+
+ main {
+     margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     background: linear-gradient(to right, #f857a6, #ff5858);
+     font-family: Open, sans-serif;
+     font-weight: 300;
+ }
+ .container {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     margin-top: 10%;
+     margin-bottom: 10%;
+     padding: 2%;
+     width: 33%;
+     height: 60%;
+     font-size: 0.70em;
+     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+     border: 1px solid black;
+     border-radius: 5px;
+     background-color: #eee;
+ }
+ .startContainer, .endContainer {
+     position: relative;
+     
+ }
+ 
+ ol {
+     display: flex;
+     flex-direction: column;
+ }
+ li {
+     padding: 2px;
+     margin-left: -20px;   
+ }
+ input {
+     width: 100%;
+     margin: 5% 0;
+     height: 30px;
+     background-color: #eee;
+     border-radius: 3px;
+     border: 1px solid #bbb;
+ }
+a {
+    text-decoration: none;
+    color: #e41d98;
+}
+.arrow {
+    position: absolute;
+    top: -30%;
+}
+
+.enterArrow {
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
+}
+.backArrow {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+.backArrow .arrow {
+    left: -25px;
+}
+ .heading {
+     padding-top: 10px;
+     font-size: 1.5em;
+     line-height: 0.2;
+ }
+ .xout {
+     border: none;
+     float: right;
+     background-color: inherit;
+ }
+ .saveButton {
+     height: 30px;
+     background-color: #e41d98;
+     color: #eee;
+ }
+
+ 
+ 
+ li:hover {
+     background-color: lightgrey;
+ }
+ button:focus, input:focus {
+     outline: 0;
+ }
+ .saveButton:hover {
+     background-color: #ff0000;
+ }
