@@ -5,14 +5,17 @@
         return {
             postInfo: postInfo,
             getInfo: getInfo,
-            removeInfo: removeInfo
+            removeInfo: removeInfo,
+            showEdit: showEdit,
+            putInfo: putInfo
         }
         function postInfo(item) {
             // API post method
             return $http({
                 method: "POST",
-                url: "/tasks",
+                url: "/todos",
                 data: item
+                
             })
             
         }
@@ -20,7 +23,7 @@
             // API get method
             return $http({
                 method: "GET",
-                url: "/tasks"
+                url: "/todos"
             }).then(function(response) {
                 return response.data;
             })
@@ -29,8 +32,27 @@
             // api remove method
             return $http({
                 method: "DELETE",
-                url: "/tasks/" + itemId
+                url: "/todos/" + itemId
             })
+        }
+        function showEdit() {
+            
+            document.getElementsByClassName("editContainer")[0].style.display = "block";
+        }
+        function putInfo(newTaskObj) {
+            
+            // api remove method
+            return $http({
+                method: "PUT",
+                url: "/todos/" + newTaskObj.id,
+                data: newTaskObj
+            }).then(function(response) {
+                return response.data;
+            })
+            
+            
+            
+            
         }
     }
     angular

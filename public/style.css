@@ -17,7 +17,7 @@
      margin-top: 10%;
      margin-bottom: 10%;
      padding: 2%;
-     width: 33%;
+     width: 50%;
      height: 60%;
      font-size: 0.70em;
      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
@@ -74,14 +74,28 @@ a {
      line-height: 0.2;
  }
  .xout {
-     border: none;
+    border: none;
+    float: right;
+    background-color: inherit;
+}
+ #edit {
+     cursor: pointer;
+     font-size: 16px;
      float: right;
-     background-color: inherit;
  }
- .saveButton {
+.editContainer {
+    display: none;
+    width: 100%;
+    border: 1px solid #bbb;
+    box-shadow: none;
+}
+ .saveButton, .editButton {
      height: 30px;
      background-color: #e41d98;
      color: #eee;
+ }
+ .editButton {
+     width: 100%;
  }
 
  

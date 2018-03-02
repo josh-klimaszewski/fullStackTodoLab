@@ -1,4 +1,5 @@
 <main>
+
     <div class="container endContainer">
         <a href="#!/start" class="backArrow">
             <i class="material-icons arrow">arrow_back</i>Go Back</a>
@@ -8,10 +9,21 @@
         <ol>
             <li ng-repeat="task in $ctrl.tasks | filter: todoFilter track by $index" hover-state>
                 {{ task.task }}
+                <button class="xout" ng-click="$ctrl.showEdit(task)">e</button>
                 <button class="xout" ng-click="$ctrl.rmInfo(task)">x</button>
             </li>
         </ol>
+        <div class="container editContainer">
+            <input type="text" placeholder="Edit your to-do"ng-model="newTask" id="editInput">
+            <button class="editButton" ng-click="$ctrl.editInfo(newTask)">Edit</button>
+        </div>
         <input id="addInput" type="text" ng-model="task" placeholder="  Add to your to-do">
         <button class="saveButton" ng-click="$ctrl.sendInfo(task)">Add</button>
     </div>
 </main>
+
+
+
+
+<!-- <i ng-click:"$ctrl.showEdit(task)" class="material-icons" id="edit">mode_edit</i> -->
+<!-- <button class="xout" ng-click="$ctrl.showEdit(task)">e</button> -->
