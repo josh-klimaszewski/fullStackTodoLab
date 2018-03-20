@@ -4,7 +4,7 @@
         .config(function($routeProvider) {
             $routeProvider
             .when("/form", {
-                template: "<task-form></task-form"
+                template: "<task-form></task-form>"
             })
             .when("/start", {
                 template: "<task-start></task-start>"
